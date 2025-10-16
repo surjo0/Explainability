@@ -1,33 +1,77 @@
-# Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis of MRI Synthesis
+# 🧠 Explainability in Generative Medical Diffusion Models  
+### A Faithfulness-Based Analysis of MRI Synthesis
+
+This repository contains the implementation and visualization scripts for the paper:  
+**“Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis of MRI Synthesis.”**
+
+Our work explores how diffusion-based generative models can produce realistic medical images while remaining interpretable through prototype-based reasoning. Using the DUKE Breast MRI dataset, we evaluate several prototype explainability networks (PPNet, EPPNet, and ProtoPool) to connect generated samples with real data and measure explainability through faithfulness-based metrics.
+
+
+---
+
+## 📘 Dataset
+
+We use the **Breast Cancer MRI dataset** available from  
+[The Cancer Imaging Archive (TCIA)](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/).
+
+This dataset provides dynamic contrast-enhanced (DCE) MRI scans of breast tissue, including both normal and abnormal cases.  
+All images are preprocessed with:
+- Intensity normalization  
+- Bias-field correction  
+- Spatial registration  
+- Binary mask extraction for breast regions  
+
+Only a single anatomical class (breast MRI) is used for training.
+
+---
+
+## Model Overview
+
+### Diffusion Model
+A conditional diffusion model is trained to synthesize high-fidelity MRI images from Gaussian noise.  
+The model follows a denoising diffusion implicit model (DDIM) process, gradually reconstructing anatomy through reverse noise estimation steps.
+
+### Prototype-Based Explainability
+Three prototype-based methods are used to interpret how generated images relate to training data:
+- **PPNet (ProtoPNet):** Basic prototype reasoning using nearest feature patches.  
+- **EPPNet (Enhanced ProtoPNet):** Adds normalization and diversity regularization for more stable explanations.  
+- **ProtoPool:** Introduces a shared prototype pool for more flexible feature matching.
+
+Each method computes **Normalized Influence Scores (NIS)** to determine how strongly prototypes contribute to generated outputs.
+
+---
+
+## 📊 Quantitative Evaluation
+
+**Image Quality Metrics**
+| Metric | Mean ± SD |
+|---------|------------|
+| PSNR | 19.37 ± 1.67 |
+| SSIM | 0.6530 ± 0.1052 |
+| LPIPS | 0.2893 ± 0.1050 |
+
+**Explainability Metrics**
+| Model | Faithfulness Score |
+|--------|--------------------|
+| PPNet | 0.0965 |
+| EPPNet | **0.1534** |
+| ProtoPool | 0.1420 |
 
 
 
-In this work, we explore explainability for generative diffusion models that synthesize breast MRI images. Unlike many prior studies that rely on multiple classes, our task involves only one anatomical class, focusing purely on image level relationships. We evaluate how different prototype-based explainability methods can connect generated images with the real examples they were influenced by. Our analysis shows that prototype-based reasoning can provide faithful and interpretable explanations even in single class medical domains.
+---
 
-This study suggests that diffusion models can be both accurate and interpretable when their design is closely aligned with the medical task. By linking the generative process with meaningful explanations, we take a step toward more transparent and trustworthy AI for medical imaging.
+## ⚙️ How to Run
 
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/surjo0/Explainability.git
+cd Explainability
 
-1. Prerequisites 
+# 2️⃣ Create environment and install dependencies
+python -m venv env
+source env/bin/activate   # or .\env\Scripts\activate on Windows
+pip install -r requirements.txt
 
-    Python 3.8+
-    GPU (recommended) or CPU
-    ~2 GB disk space
-
-2. Setup
-
-git clone [https://github.com/your-username/explainable-medical-diffusion.git](https://github.com/surjo0/Explainability.git)
-cd explainable-medical-diffusion
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install diffusers safetensors scikit-image lpips matplotlib pillow numpy
-
-
-3. Download Pretrained Model
-
-5. Run Explainability Pipeline
-
+# 3️⃣ Run diffusion synthesis and explainability
+python duke.py
