@@ -1,4 +1,4 @@
-# 🧠 Explainability in Generative Medical Diffusion Models  
+#  Explainability in Generative Medical Diffusion Models  
 ### A Faithfulness-Based Analysis of MRI Synthesis
 
 This repository contains the implementation and visualization scripts for the paper:  
