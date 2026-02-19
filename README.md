@@ -4,7 +4,20 @@
 This repository contains the implementation and visualization scripts for the paper:  
 **“Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis of MRI Synthesis.”**
 
-Our work explores how diffusion-based generative models can produce realistic medical images while remaining interpretable through prototype-based reasoning. Using the DUKE Breast MRI dataset, we evaluate several prototype explainability networks (PPNet, EPPNet, and ProtoPool) to connect generated samples with real data and measure explainability through faithfulness-based metrics.
+## 📢 News
+
+**Accepted at the 3rd World Congress on Smart Computing (WCSC 2026).**
+
+This work has been accepted for presentation at **WCSC 2026**. The repository contains the code, evaluation pipeline, and reproducible experiments associated with the paper.
+
+**Preprint available on arXiv:**  
+https://arxiv.org/pdf/2602.09781
+
+
+
+This paper presents a structured explainability framework for diffusion-based medical image synthesis, with a focus on understanding how generative decisions relate to clinically meaningful image structures. We integrate prototype-based reasoning networks with diffusion models to trace synthetic outputs back to representative training samples, enabling transparent and interpretable generative behavior.
+
+Beyond visual inspection, the work introduces quantitative faithfulness analysis to evaluate how reliably explanation mechanisms reflect the true generative process. We systematically assess structural fidelity, prototype influence, and reconstruction consistency using PSNR, SSIM, LPIPS, and normalized influence-based explainability metrics.
 
 
 ---
@@ -75,3 +88,18 @@ pip install -r requirements.txt
 
 # 3️⃣ Run diffusion synthesis and explainability
 python duke.py
+
+```
+
+
+## 📄 Cite
+
+If you use this repository in your work, please cite:
+
+```bibtex
+@article{dey2026explainability,
+  title={Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis on MRI Synthesis},
+  author={Dey, Surjo and Saikia, Pallabi},
+  journal={arXiv preprint arXiv:2602.09781},
+  year={2026}
+}
