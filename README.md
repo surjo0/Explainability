@@ -132,13 +132,6 @@ This dataset provides dynamic contrast-enhanced (DCE) MRI scans covering both no
 # Clone the repository
 git clone https://github.com/surjo0/Explainability.git
 cd Explainability
-
-# (Recommended) Create a virtual environment
-python -m venv venv
-source venv/bin/activate       # Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
 ```
 
 **Core dependencies:** Python ≥ 3.8, PyTorch ≥ 2.0, torchvision, numpy, scipy, scikit-image, lpips, matplotlib
