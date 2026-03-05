@@ -35,7 +35,7 @@ We propose a structured explainability framework for diffusion-based medical ima
 ## Method
 
 <p align="center">
-  <img src="Figures/method.pdf" alt="Overall method pipeline" width="850"/>
+  <img src="Figures/method.jpg" alt="Overall method pipeline" width="850"/>
 </p>
 <p align="center"><em>Figure 1: Overall framework. A DDIM synthesizes MRI images from Gaussian noise; prototype networks then explain each generated output by matching it to training-set prototypes and computing Normalized Influence Scores.</em></p>
 
@@ -51,7 +51,7 @@ A **Denoising Diffusion Implicit Model (DDIM)** is trained on DCE breast MRI dat
 ### 2. Real vs. Synthetic MRI
 
 <p align="center">
-  <img src="Figures/real_vs_fake.pdf" alt="Real vs synthetic MRI comparison" width="750"/>
+  <img src="Figures/real_vs_fake.jpg" alt="Real vs synthetic MRI comparison" width="750"/>
 </p>
 <p align="center"><em>Figure 3: Visual comparison of real DCE breast MRI scans (top) and DDIM-synthesized images (bottom), demonstrating high structural and textural fidelity of the generated samples.</em></p>
 
@@ -68,7 +68,7 @@ Three prototype methods are integrated with the diffusion backbone to explain ge
 Each model computes **Normalized Influence Scores (NIS)** — scalars quantifying how strongly each training prototype contributed to a given generated image.
 
 <p align="center">
-  <img src="Figures/nis.pdf" alt="Normalized Influence Score distributions" width="750"/>
+  <img src="Figures/nis.jpg" alt="Normalized Influence Score distributions" width="750"/>
 </p>
 <p align="center"><em>Figure 4: Normalized Influence Score (NIS) distributions across PPNet, EPPNet, and ProtoPool. EPPNet yields the most concentrated and discriminative scores, reflecting better prototype specificity.</em></p>
 
@@ -81,7 +81,7 @@ Faithfulness = Corr( NIS(prototype_i),  Δ output structure | perturb prototype_
 ```
 
 <p align="center">
-  <img src="Figures/faithfulness.pdf" alt="Faithfulness score comparison" width="750"/>
+  <img src="Figures/faithfulness.jpg" alt="Faithfulness score comparison" width="750"/>
 </p>
 <p align="center"><em>Figure 5: Faithfulness score comparison across the three prototype models. EPPNet achieves the highest faithfulness (0.1534), attributed to its normalization scheme which reduces redundancy among prototypes.</em></p>
 
