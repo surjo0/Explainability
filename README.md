@@ -44,7 +44,7 @@ We propose a structured explainability framework for diffusion-based medical ima
 A **Denoising Diffusion Implicit Model (DDIM)** is trained on DCE breast MRI data to synthesize anatomically plausible images. The reverse diffusion process iteratively denoises from Gaussian noise through learned noise-estimation steps, reconstructing clinically meaningful structure at each timestep.
 
 <p align="center">
-  <img src="Figures/noise_prediction_maps.pdf" alt="Noise prediction maps" width="750"/>
+  <img src="Figures/noise_prediction_maps.png" alt="Noise prediction maps" width="750"/>
 </p>
 <p align="center"><em>Figure 2: Noise prediction maps across reverse diffusion timesteps, illustrating how anatomical structure progressively emerges during the denoising process.</em></p>
 
