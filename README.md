@@ -1,5 +1,5 @@
-#  Explainability in Generative Medical Diffusion Models  
-### A Faithfulness-Based Analysis of MRI Synthesis
+#  Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis on MRI Synthesis  
+
 
 This repository contains the implementation and visualization scripts for the paper:  
 **“Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis of MRI Synthesis.”**
@@ -74,20 +74,13 @@ Each method computes **Normalized Influence Scores (NIS)** to determine how stro
 
 ---
 
-## ⚙️ How to Run
+## ⚙️ Clone and Run
 
 ```bash
-# 1️⃣ Clone the repository
+#  Clone the repository
 git clone https://github.com/surjo0/Explainability.git
 cd Explainability
 
-# 2️⃣ Create environment and install dependencies
-python -m venv env
-source env/bin/activate   # or .\env\Scripts\activate on Windows
-pip install -r requirements.txt
-
-# 3️⃣ Run diffusion synthesis and explainability
-python duke.py
 
 ```
 
