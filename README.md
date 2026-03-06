@@ -217,12 +217,6 @@ If you use this code or build on this work, please cite:
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
 ## Contact
 
 **Surjo Dey** — [@surjo0](https://github.com/surjo0)  
